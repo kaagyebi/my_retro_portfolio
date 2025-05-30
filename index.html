@@ -16,16 +16,17 @@
 
 <body>
     <!-- NAVIGATION AREA -->
-    <header class="bg-[#fcbe42] border-b-4 border-black px-6 py-4">
-        <nav x-data="{ open: false }" class="font-mono text-black px-4 py-2 flex justify-around items-center gap-10">
-            <div class="flex">
-                <!-- Logo -->
-                <a href="#" class="text-3xl font-extrabold transition hover:scale-125 hover:skew-2">kaagyebi</a>
+    <header class="bg-gradient-to-r from-[#FCBE42] to-[#FF29C6] border-b-4 border-black px-6 py-4">
+        <nav x-data="{ open: false }" class="font-mono text-black px-4 py-2  flex justify-around items-center gap-10">
+            <!-- Logo -->
+            <a href="#" class="text-3xl font-extrabold transition hover:scale-125 hover:skew-2"
+                style="text-shadow: 2px 2px 0 #FF29C6;">kaagyebi</a>
 
-                <!-- Hamburger Button -->
-                <button @click="open = !open" class="md:hidden text-2xl">
-                    &#9776;
-                </button>
+
+            <!-- Hamburger Button -->
+            <button @click="open = !open" class="md:hidden text-2xl">
+                &#9776;
+            </button>
             </div>
 
             <!-- Links + Button (hidden on mobile, shown when toggled) -->
@@ -89,13 +90,16 @@
                     </p>
 
                     <div class="flex gap-4 pt-4">
-                        <button
-                            class="bg-[#FF29C6] text-black border border-black px-6 py-2 text-sm font-mono shadow-[2px_2px_0px_#000] hover:bg-black hover:text-white active:shadow-inner active:translate-y-[1px] transition-all">
-                            > Hire Me < </button>
-                                <button
-                                    class="bg-[#295BFF] text-black border border-black px-6 py-2 text-sm font-mono shadow-[2px_2px_0px_#000] hover:bg-black hover:text-white active:shadow-inner active:translate-y-[1px] transition-all">
-                                    ↓ Download CV
-                                </button>
+                        <a href="#contact"><button id="contact"
+                                class="bg-[#FF29C6] text-black border border-black px-6 py-2 text-sm font-mono shadow-[2px_2px_0px_#000] hover:bg-black hover:text-white active:shadow-inner active:translate-y-[1px] transition-all">
+                                > Hire Me < </button></a>
+                        <a href="/assets/cv.pdf" download target="_blank" rel="noopener noreferrer">
+                            <button
+                                class="bg-[#295BFF] text-black border border-black px-6 py-2 text-sm font-mono shadow-[2px_2px_0px_#000] hover:bg-black hover:text-white active:shadow-inner active:translate-y-[1px] transition-all">
+                                ↓ Download CV
+                            </button>
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -492,48 +496,56 @@
         <div class="max-w-6xl mx-auto px-4 py-8 relative z-10">
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-                <!-- Quick Links -->
-                <div class="border-2 border-black p-3 bg-white shadow-[3px_3px_0_#000]">
-                    <h3 class="text-lg font-bold mb-2 border-b border-black">Quick Links</h3>
-                    <ul class="space-y-1">
-                        <li><a href="#" class="hover:underline hover:text-[#FF29C6]">→ Home</a></li>
-                        <li><a href="#about" class="hover:underline hover:text-[#FF29C6]">→ About Me</a></li>
-                        <li><a href="#Skill-Set" class="hover:underline hover:text-[#FF29C6]">→ Skills</a></li>
-                        <li><a href="#projects" class="hover:underline hover:text-[#FF29C6]">→ Projects</a></li>
-                        <li><a href="#contact" class="hover:underline hover:text-[#FF29C6]">→ Contact</a></li>
+                <!-- Quick Links Panel (Windows Style) -->
+                <div class="bg-white border-[3px] border-black shadow-[inset_-2px_-2px_0_#aaa,inset_2px_2px_0_#fff]">
+                    <!-- Title bar -->
+                    <div
+                        class="bg-[#000080] text-white font-bold text-sm px-2 py-1 border-b border-black flex justify-between items-center">
+                        <span>Quick Links</span>
+                        <span class="text-[10px]">🗙</span>
+                    </div>
+                    <!-- Content -->
+                    <ul class="text-left text-sm px-3 py-2 space-y-1">
+                        <li><a href="#" class="hover:underline text-blue-800">→ Home</a></li>
+                        <li><a href="#about" class="hover:underline text-blue-800">→ About Me</a></li>
+                        <li><a href="#Skill-Set" class="hover:underline text-blue-800">→ Skills</a></li>
+                        <li><a href="#projects" class="hover:underline text-blue-800">→ Projects</a></li>
+                        <li><a href="#contact" class="hover:underline text-blue-800">→ Contact</a></li>
                     </ul>
                 </div>
 
-                <!-- Socials -->
-                <div class="border-2 border-black p-3 bg-white shadow-[3px_3px_0_#000]">
-                    <h3 class="text-lg font-bold mb-2 border-b border-black">Find Me</h3>
-                    <div class="flex gap-2 flex-wrap">
-                        <a href="#"
-                            class="w-8 h-8 bg-[#FF29C6] border border-black flex items-center justify-center hover:bg-black hover:text-white"><i
-                                class="fab fa-github text-xs"></i></a>
-                        <a href="#"
-                            class="w-8 h-8 bg-[#295BFF] border border-black flex items-center justify-center hover:bg-black hover:text-white"><i
-                                class="fab fa-linkedin text-xs"></i></a>
-                        <a href="#"
-                            class="w-8 h-8 bg-[#29FF62] border border-black flex items-center justify-center hover:bg-black hover:text-white"><i
-                                class="fab fa-twitter text-xs"></i></a>
-                        <a href="#"
-                            class="w-8 h-8 bg-[#FDC700] border border-black flex items-center justify-center hover:bg-black hover:text-white"><i
-                                class="fab fa-instagram text-xs"></i></a>
+                <!-- Find Me Panel (Windows Style) -->
+                <div class="bg-white border-[3px] border-black shadow-[inset_-2px_-2px_0_#aaa,inset_2px_2px_0_#fff]">
+                    <!-- Title bar -->
+                    <div
+                        class="bg-[#000080] text-white font-bold text-sm px-2 py-1 border-b border-black flex justify-between items-center">
+                        <span>Find Me</span>
+                        <span class="text-[10px]">🗙</span>
                     </div>
-
-                    <!-- Copyright -->
-                    <div class="mt-6 text-center ml-16">
-                        <div class="inline-block bg-white border border-black px-4 py-1 shadow-[2px_2px_0_#000]">
-                            <p class="font-bold">© 2025 Kweku Amoah</p>
-                            
-                        </div>
+                    <!-- Content -->
+                    <div class="flex flex-wrap gap-2 px-3 py-2">
+                        <a href="https://github.com/kaagyebi"
+                            class="w-8 h-8 bg-gray-300 border border-black flex items-center justify-center hover:bg-black hover:text-white"
+                            target="blank" rel="noopener noreferrer"><i class="fab fa-github text-xs"></i></a>
+                        <!-- <a href="#"
+                            class="w-8 h-8 bg-gray-300 border border-black flex items-center justify-center hover:bg-black hover:text-white"><i
+                                class="fab fa-linkedin text-xs"></i></a> -->
+                        <!-- <a href="#"
+                            class="w-8 h-8 bg-gray-300 border border-black flex items-center justify-center hover:bg-black hover:text-white"><i
+                                class="fab fa-twitter text-xs"></i></a> -->
+                        <!-- <a href="#"
+                            class="w-8 h-8 bg-gray-300 border border-black flex items-center justify-center hover:bg-black hover:text-white"><i
+                                class="fab fa-instagram text-xs"></i></a> -->
                     </div>
-
                 </div>
 
-
             </div>
+        </div>
+
+        </div>
+
+
+        </div>
     </footer>
 
 </body>
