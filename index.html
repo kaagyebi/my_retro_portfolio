@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./index.js" defer></script>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+</head>
+
+
+<body>
+    <!-- NAVIGATION AREA -->
+    <header class="bg-[#fcbe42] border-b-4 border-black px-6 py-4">
+        <nav x-data="{ open: false }" class="font-mono text-black px-4 py-2 flex justify-around items-center gap-10">
+            <div class="flex">
+                <!-- Logo -->
+                <a href="#" class="text-3xl font-extrabold transition hover:scale-125 hover:skew-2">kaagyebi</a>
+
+                <!-- Hamburger Button -->
+                <button @click="open = !open" class="md:hidden text-2xl">
+                    &#9776;
+                </button>
+            </div>
+
+            <!-- Links + Button (hidden on mobile, shown when toggled) -->
+            <div :class="{'block': open, 'hidden': !open }"
+                class="mt-4 md:flex md:items-center md:justify-between md:mt-0 hidden">
+                <div
+                    class="flex flex-col md:flex-row gap-4 md:gap-6 text-sm md:text-base font-semibold items-start md:items-center">
+                    <a href="#" class="hover:underline hover:underline-offset-4">Home</a>
+                    <a href="#about" class="hover:underline hover:underline-offset-4">About-Me</a>
+                    <a href="#skill" class="hover:underline hover:underline-offset-4">Skill</a>
+                    <a href="#projects" class="hover:underline hover:underline-offset-4">Projects</a>
+                    <a href="#contact" class="hover:underline hover:underline-offset-4">Contact</a>
+                </div>
+
+            </div>
+            <div class="mt-4 md:mt-0 ">
+                <button
+                    class="inline-block bg-[#FF29C6] text-black border border-black px-4 py-1 text-sm font-mono shadow-[2px_2px_0px_#000] hover:bg-black hover:text-white active:shadow-inner active:translate-y-[1px] transition-all">
+                    → Contact Me
+                </button>
+            </div>
+        </nav>
+
+    </header>
+
+    <section class="w-full bg-[url('./assets/.jpg')] bg-cover text-black font-mono border-b-2 border-black">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center px-6 py-12 gap-8">
+
+            <video autoplay muted loop playsinline
+                class="absolute top-0 left-0 w-full h-155 md:h-150 object-cover z-[-1] opacity-100 mix-blend-multiply mt-3">
+                <source src="/assets/vl.mp4" type="video/mp4">
+
+            </video>
+
+            <!-- Left Column: Intro -->
+            <div
+                class="max-w-3xl border-4 border-black shadow-[6px_6px_0_0_#000] transition-all duration-300 transform hover:scale-125 hover:rotate-360">
+                <!-- Title Bar -->
+                <div class="flex justify-between items-center bg-yellow-400 border-b-4 border-black px-4 py-2">
+                    <span class="text-xl font-bold text-black">Welcome</span>
+                    <span class="flex gap-1">
+                        <span class="w-3 h-3 bg-red-500 border border-black rounded-full"></span>
+                        <span class="w-3 h-3 bg-yellow-300 border border-black rounded-full"></span>
+                        <span class="w-3 h-3 bg-green-500 border border-black rounded-full"></span>
+                    </span>
+                </div>
+
+                <!-- Content -->
+                <div class="flex flex-col items-center text-center justify-center p-6 bg-[#29FF62] text-black">
+                    <p class="text-lg">Hi, I am</p>
+                    <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight leading-snug">
+                        <span class="block border-b-4 border-black w-fit pr-2">Kweku Amoah</span>
+                        <span class="mt-2 block text-3xl md:text-5xl">Web Developer</span>
+                    </h1>
+
+                    <p class="text-base leading-relaxed max-w-lg mt-4">
+                        I build fast, accessible, and elegant web experiences with
+                        <span class="underline font-bold">user-centered design</span>,
+                        <span class="underline font-bold">responsive layouts</span>, and
+                        <span class="underline font-bold">clean code [HTML,CSS & JavaScript]</span>.
+                    </p>
+
+                    <div class="flex gap-4 pt-4">
+                        <button
+                            class="bg-[#FF29C6] text-black border border-black px-6 py-2 text-sm font-mono shadow-[2px_2px_0px_#000] hover:bg-black hover:text-white active:shadow-inner active:translate-y-[1px] transition-all">
+                            > Hire Me < </button>
+                                <button
+                                    class="bg-[#295BFF] text-black border border-black px-6 py-2 text-sm font-mono shadow-[2px_2px_0px_#000] hover:bg-black hover:text-white active:shadow-inner active:translate-y-[1px] transition-all">
+                                    ↓ Download CV
+                                </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Image
+            <div class="w-full md:w-1/2 flex justify-center">
+                <div class="border-4 border-black p-2 shadow-[4px_4px_0px_#000]">
+                    <img src="./assets/.png" alt="Kweku Amoah"
+                        class="w-64 h-64 object-cover shadow-[2px_2px_0px_#000] border border-black" />
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+
+    <div class="relative ">
+    </div>
+    <section id="about" class="text-black p-8 md:p-16 font-mono bg-[url('./assets/pbg.jpg')] bg-cover ">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 bg-[url('./assets/.jpg')] ">
+            <!-- Image Block -->
+            <div
+                class="border-4 border-black p-2 shadow-[5px_5px_0_0_#000] transition-all duration-300 transform hover:scale-125 hover:scale-6">
+                <img src="./assets/me.png" alt="Kweku" class="w-64 h-64 object-cover grayscale contrast-125" />
+            </div>
+
+            <!-- Info Block -->
+            <div
+                class="flex-1 max-w-xl border-4 border-black shadow-[6px_6px_0_0_#000] text-black text-lg leading-relaxed bg-[#FCBE42]">
+                <div class="flex justify-between items-center  border-b-4 border-black px-4 py-2  ">
+                    <span class="font-bold text-xl">About Me</span>
+                    <span class="flex gap-1">
+                        <span class="w-3 h-3 bg-red-500 border border-black rounded-full"></span>
+                        <span class="w-3 h-3 bg-yellow-300 border border-black rounded-full"></span>
+                        <span class="w-3 h-3 bg-green-500 border border-black rounded-full"></span>
+                    </span>
+                </div>
+                <p class="ml-2">I'm a <span class="font-bold">Web Developer</span> with a love for building
+                    retro-futuristic, fast,
+                    and accessible websites. I mix clean code with a manga-inspired design approach.
+                </p>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 mt-6 gap-4 text-center">
+                    <div class="border border-black p-2 shadow-[3px_3px_0_0_#000] ml-5 bg-[#29FF62]">
+                        <p class="text-2xl font-bold">490k+</p>
+                        <p class="text-sm">Followers</p>
+                    </div>
+                    <div class="border border-black p-2 shadow-[3px_3px_0_0_#000] bg-[#29FF62]">
+                        <p class="text-2xl font-bold">530+</p>
+                        <p class="text-sm">Clients</p>
+                    </div>
+                    <div class="border border-black p-2 shadow-[3px_3px_0_0_#000] mr-5 bg-[#29FF62]">
+                        <p class="text-2xl font-bold">690k+</p>
+                        <p class="text-sm">Requests</p>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <button
+                    class=" flex mt-6  border-2 border-black px-6 py-2 shadow-[4px_4px_0_0_#000] hover:bg-black hover:text-white mb-3 ml-5 transition duration-300 bg-[#295BFF]">
+                    Download CV
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="skill" class="relative bg- text-black font-mono px-6 py-12 border-t border-black overflow-hidden">
+        <!-- Background Layer -->
+        <div
+            class="absolute inset-0 -z-10 bg-[url('./assets/screentone.jpg')] bg-cover bg-repeat opacity-100 mix-blend-multiply">
+        </div>
+
+        <!-- Foreground Content -->
+        <div class=" max-w-6xl mx-auto">
+            <!-- Title -->
+            <h2
+                class="text-4xl font-extrabold underline underline-offset-4 mb-10 border-2 border p-6 shadow-[4px_4px_0_#000] border-black bg-yellow-400">
+                Skill-Set</h2>
+
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Skill Cards -->
+                <div
+                    class="border-2 border-black p-6 shadow-[4px_4px_0_#000] bg-white transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                    <div class="mb-4 transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                        <div class="w-10 h-10 border border-black flex items-center justify-center text-sm font-bold">
+                            <div
+                                class="w-10 h-10 border border-black flex items-center justify-center text-xl bg-[#FF29C6]">
+                                <i
+                                    class="fa-brands fa-square-github transition-all duration-300 transform hover:scale-125 hover:rotate-6 hover:text-[#6e5494] text-5xl"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Git Version Control</h3>
+                    <p class="text-sm">I manage codebases efficiently with Git and GitHub for versioning and team
+                        collaboration.</p>
+                </div>
+
+                <!-- Repeat for other skill cards... -->
+                <!-- App Design -->
+                <div
+                    class="border-2 border-black p-6 shadow-[4px_4px_0_#000] bg-white transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                    <div class="mb-4 transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                        <div class="w-10 h-10 items-center justify-center text-xl bg-[#FF29C6]">
+                            <i
+                                class="fa-solid fa-chart-simple transition-all duration-300 transform hover:scale-125 hover:rotate-6 hover:text-[#6e5494] text-5xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Data Analytics</h3>
+                    <p class="text-sm">I design clean, user-friendly app interfaces with a retro-modern twist.</p>
+                </div>
+
+                <!-- Back-end Development -->
+                <div
+                    class="border-2 border-black p-6 shadow-[4px_4px_0_#000] bg-white transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                    <div class="mb-4 transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                        <div
+                            class="w-10 h-10  flex items-center justify-center text-xl bg-[#FF29C6] transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                            <i
+                                class="fa-solid fa-database transition-all duration-300 transform hover:scale-125 hover:rotate-6 hover:text-[#6e5494] text-5xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Back-end Development</h3>
+                    <p class="text-sm">I build secure, scalable APIs and server logic using Node.js, Express, and more.
+                    </p>
+                </div>
+
+                <!-- Web Development -->
+                <div
+                    class="border-2 border-black p-6 shadow-[4px_4px_0_#000] bg-white transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                    <div class="mb-4 transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                        <div class="w-10 h-10 flex items-center justify-center text-xl bg-[#FF29C6]">
+                            <i
+                                class="fa-solid fa-globe  transition-all duration-300 transform hover:scale-125 hover:rotate-6 hover:text-[#6e5494] text-5xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                    <p class="text-sm">Crafting responsive websites with HTML, Tailwind CSS, and JavaScript.</p>
+                </div>
+
+                <!-- Photography -->
+                <div
+                    class="border-2 border-black p-6 shadow-[4px_4px_0_#000] bg-white transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                    <div class="mb-4 transition-all duration-300 transform hover:scale-125 hover:rotate-6 ">
+                        <div class="w-10 h-10 flex items-center justify-center text-xl bg-[#FF29C6] ">
+                            <i
+                                class="fa-solid fa-blog transition-all duration-300 transform hover:scale-125 hover:rotate-6 hover:text-[#6e5494] text-5xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Blog</h3>
+                    <p class="text-sm">Visual storytelling through clean, high-quality shots and editing.</p>
+                </div>
+
+                <!-- Graphic Design -->
+                <div
+                    class="border-2 border-black p-6 shadow-[4px_4px_0_#000] bg-white transition-all duration-300 transform hover:scale-125 hover:rotate-6 transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                    <div class="mb-4 transition-all duration-300 transform hover:scale-125 hover:rotate-6">
+                        <div class="w-10 h-10 flex items-center justify-center text-xl bg-[#FF29C6]">
+                            <i
+                                class="fa-solid fa-image transition-all duration-300 transform hover:scale-125 hover:rotate-6 hover:text-[#6e5494] text-5xl"></i>
+                        </div>
+
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Graphic Design</h3>
+                    <p class="text-sm">Delivering creative and technical solutions for clients globally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="projects" class="bg-[url('./assets/ps.jpg')] bg-cover py-16 px-4 md:px-12 border-t-4 border-black">
+        <div class="max-w-6xl mx-auto text-center ">
+            <h2
+                class="text-4xl md:text-5xl font-bold mb-8 font-mono tracking-wider border-4 border-black p-2 inline-block bg-[#FDC700] shadow-[4px_4px_0_#000] bg-[#FDC700] justify-end">
+                My Projects
+            </h2>
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
+
+                <!-- Project Card -->
+                <div
+                    class="relative bg-white border-4 border-black rounded-lg shadow-[4px_4px_0_#000] hover:scale-105 transition-transform duration-300">
+                    <!-- Window Top Bar -->
+                    <div class="flex items-center justify-start gap-2 bg-gray-200 border-b-4 border-black px-3 py-1">
+                        <div class="w-3 h-3 bg-red-500 rounded-full border border-black"></div>
+                        <div class="w-3 h-3 bg-yellow-400 rounded-full border border-black"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full border border-black"></div>
+                    </div>
+
+                    <!-- Image Section -->
+                    <div
+                        class="w-full h-40 bg-gray-100 border-b-4 border-black flex items-center justify-center overflow-hidden">
+                        <!-- Replace this placeholder with your image -->
+                        <a href="https://dog-site-kappa.vercel.app/">
+                            <img src="./assets/dw.png" alt="Manga Viewer Screenshot" class="object-cover h-full w-full">
+                        </a>
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="p-4">
+                        <h3 class="text-2xl font-bold font-mono mb-2">DoggyWalker</h3>
+                        <p class="text-sm font-semibold">A web site for people who would want a dog walking service</p>
+                    </div>
+
+                    <!-- Sticker -->
+                    <span
+                        class="absolute -top-4 -right-4 bg-yellow-300 text-black font-bold px-3 py-1 border-2 border-black rotate-9">
+                        NEW!
+                    </span>
+                </div>
+
+                <!-- Project Card#2 -->
+                <div
+                    class="relative bg-white border-4 border-black rounded-lg shadow-[4px_4px_0_#000] hover:scale-105 transition-transform duration-300">
+                    <!-- Window Top Bar -->
+                    <div class="flex items-center justify-start gap-2 bg-gray-200 border-b-4 border-black px-3 py-1">
+                        <div class="w-3 h-3 bg-red-500 rounded-full border border-black"></div>
+                        <div class="w-3 h-3 bg-yellow-400 rounded-full border border-black"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full border border-black"></div>
+                    </div>
+
+                    <!-- Image Section -->
+                    <div
+                        class="w-full h-40 bg-gray-100 border-b-4 border-black flex items-center justify-center overflow-hidden">
+                        <!-- Replace this placeholder with your image -->
+                        <a href="https://tailwind-practice-roan-phi.vercel.app/"><img src="./assets/resturant.png"
+                                alt="Retro Game Portfolio Screenshot" class="object-cover h-full w-full"></a>
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="p-4">
+                        <h3 class="text-2xl font-bold font-mono mb-2">FoodFun</h3>
+                        <p class="text-sm font-semibold">A resturant theme website made to practice dimensions</p>
+                    </div>
+
+                    <!-- Sticker -->
+                    <span
+                        class="absolute -top-4 -left-4 bg-red-500 text-white font-bold px-2 py-1 border-2 border-black rotate-[-6deg]">
+                        WOW!
+                    </span>
+                </div>
+
+                <!-- Project Card#3 -->
+                <!-- Project Card -->
+                <div
+                    class="relative bg-white border-4 border-black rounded-lg shadow-[4px_4px_0_#000] hover:scale-105 transition-transform duration-300">
+                    <!-- Window Top Bar -->
+                    <div class="flex items-center justify-start gap-2 bg-gray-200 border-b-4 border-black px-3 py-1">
+                        <div class="w-3 h-3 bg-red-500 rounded-full border border-black"></div>
+                        <div class="w-3 h-3 bg-yellow-400 rounded-full border border-black"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full border border-black"></div>
+                    </div>
+
+                    <!-- Image Section -->
+                    <div
+                        class="w-full h-40 bg-gray-100 border-b-4 border-black flex items-center justify-center overflow-hidden">
+                        <!-- Replace this placeholder with your image -->
+                        <img src="./assets/pv.png" alt="Speech Bubble Blog Screenshot"
+                            class="object-cover h-full w-full">
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="p-4">
+                        <h3 class="text-2xl font-bold font-mono mb-2">My Retro Portfolio</h3>
+                        <p class="text-sm font-semibold">A portfolio styled with comic panels and typewriter style
+                            fonts.</p>
+                    </div>
+
+                    <!-- Sticker -->
+                    <span
+                        class="absolute -bottom-4 -right-4 bg-blue-400 text-white font-bold px-3 py-1 border-2 border-black rotate-3">
+                        BANG!
+                    </span>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact"
+        class="relative bg-whte text-black font-mono px-6 py-12 border-t-4 border-black overflow-hidden">
+        <!-- Background Layer - Reduced opacity and ensured proper z-index -->
+
+        <div class="absolute inset-0 -z-10 bg- bg-cover bg-repeat opacity-50"></div>
+
+        <!-- Foreground Content -->
+        <div class=" max-w-6xl mx-auto">
+            <!-- Title -->
+            <h2
+                class="text-4xl font-extrabold underline underline-offset-4 mb-10 border-2 border p-6 shadow-[4px_4px_0_#000] border-black bg-yellow-400">
+                Contact Me
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 ">
+                <!-- Contact Form -->
+                <div class="border-2 border-black p-6 shadow-[4px_4px_0_#000] bg-[url('./assets/.jpg')">
+                    <p class="mb-6 text-lg font-bold">Feel free to contact me any time. I will get back to you as soon
+                        as I can!</p>
+
+                    <form action="https://formspree.io/f/mzzgpdyz" method="POST" class="space-y-4">
+                        <div>
+                            <label class="block font-bold mb-1">Name</label>
+                            <input type="text" name="name"
+                                class="w-full border-2 border-black p-2 focus:outline-none focus:ring-2 focus:ring-[#FF29C6] focus:border-transparent"
+                                required>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1">Email</label>
+                            <input type="email" name="email"
+                                class="w-full border-2 border-black p-2 focus:outline-none focus:ring-2 focus:ring-[#FF29C6] focus:border-transparent"
+                                required>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1">Message</label>
+                            <textarea name="message"
+                                class="w-full border-2 border-black p-2 h-32 focus:outline-none focus:ring-2 focus:ring-[#FF29C6] focus:border-transparent"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="mt-6 px-8 py-3 bg-[#FF29C6] text-white font-bold border-2 border-black shadow-[4px_4px_0_#000] hover:bg-[#e620b3] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200">
+                            S E N D
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info Section -->
+                <div class="border-2 border-black p-6 shadow-[4px_4px_0_#000] bg-[url('./assets/pv.png')">
+                    <h3 class="text-2xl font-bold mb-4 border-b-2 border-black pb-2">Info</h3>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div
+                                class="w-8 h-8 bg-[#FF29C6] border-2 border-black flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <p class="font-bold">kaagyebi@gmail.com</p>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="w-8 h-8 bg-[#FF29C6] border-2 border-black flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <p class="font-bold">+233 558 223 734</p>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="w-8 h-8 bg-[#FF29C6] border-2 border-black flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <p class="font-bold">Bremang UGC, Kumasi-Ghana</p>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="w-8 h-8 bg-[#FF29C6] border-2 border-black flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <p class="font-bold">09:00 - 14:00</p>
+                        </div>
+                    </div>
+
+                    <!-- Decorative elements -->
+                    <div class="mt-8 flex space-x-4">
+                        <div class="w-12 h-12 border-2 border-black bg-yellow-400 rotate-6"></div>
+                        <div class="w-8 h-8 border-2 border-black bg-[#FF29C6] -rotate-6"></div>
+                        <div class="w-10 h-10 border-2 border-black bg-blue-400 rotate-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative bg-[#FCBE42] border-t-4 border-black font-mono overflow-hidden text-sm">
+        <!-- Screentone -->
+        <div class="absolute inset-0 bg-[url('./assets/screentone.jpg')] opacity-20 mix-blend-multiply"></div>
+
+        <!-- Burst -->
+        <div class="absolute top-2 left-1/2 transform -translate-x-1/2 rotate-3 z-10">
+            <div class="text-2xl font-extrabold bg-yellow-400 px-4 py-1 border-2 border-black shadow-[3px_3px_0_#000]">
+                TO BE CONTINUED...
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 py-8 relative z-10">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                <!-- Quick Links -->
+                <div class="border-2 border-black p-3 bg-white shadow-[3px_3px_0_#000]">
+                    <h3 class="text-lg font-bold mb-2 border-b border-black">Quick Links</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:underline hover:text-[#FF29C6]">→ Home</a></li>
+                        <li><a href="#about" class="hover:underline hover:text-[#FF29C6]">→ About Me</a></li>
+                        <li><a href="#Skill-Set" class="hover:underline hover:text-[#FF29C6]">→ Skills</a></li>
+                        <li><a href="#projects" class="hover:underline hover:text-[#FF29C6]">→ Projects</a></li>
+                        <li><a href="#contact" class="hover:underline hover:text-[#FF29C6]">→ Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Socials -->
+                <div class="border-2 border-black p-3 bg-white shadow-[3px_3px_0_#000]">
+                    <h3 class="text-lg font-bold mb-2 border-b border-black">Find Me</h3>
+                    <div class="flex gap-2 flex-wrap">
+                        <a href="#"
+                            class="w-8 h-8 bg-[#FF29C6] border border-black flex items-center justify-center hover:bg-black hover:text-white"><i
+                                class="fab fa-github text-xs"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 bg-[#295BFF] border border-black flex items-center justify-center hover:bg-black hover:text-white"><i
+                                class="fab fa-linkedin text-xs"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 bg-[#29FF62] border border-black flex items-center justify-center hover:bg-black hover:text-white"><i
+                                class="fab fa-twitter text-xs"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 bg-[#FDC700] border border-black flex items-center justify-center hover:bg-black hover:text-white"><i
+                                class="fab fa-instagram text-xs"></i></a>
+                    </div>
+
+                    <!-- Copyright -->
+                    <div class="mt-6 text-center ml-16">
+                        <div class="inline-block bg-white border border-black px-4 py-1 shadow-[2px_2px_0_#000]">
+                            <p class="font-bold">© 2025 Kweku Amoah</p>
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+    </footer>
+
+</body>
