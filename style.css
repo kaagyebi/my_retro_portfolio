@@ -1,0 +1,31 @@
+#boot-screen {
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+}
+
+#boot-text {
+  font-family: 'JetBrains Mono', monospace;
+  animation: blinkCursor 1s step-end infinite;
+  overflow-wrap: break-word;
+}
+
+@keyframes blinkCursor {
+  50% { border-right: 2px solid transparent; }
+  100% { border-right: 2px solid #22c55e; }
+}
+
+@keyframes bootFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+  }
+}
+
+.boot-hide {
+  animation: bootFadeOut 1s ease-in-out forwards;
+}

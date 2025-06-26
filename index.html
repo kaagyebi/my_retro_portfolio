@@ -15,6 +15,22 @@
 
 
 <body>
+    <!-- Terminal Boot Screen -->
+    <div id="boot-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-black text-green-400 font-mono">
+        <div
+            class="max-w-xl w-full border-4 border-black shadow-[6px_6px_0_0_#000] bg-[#0f0f0f] text-left p-6 text-sm sm:text-base leading-snug">
+            <div class="flex justify-between items-center bg-yellow-400 border-b-4 border-black px-3 py-1 mb-4">
+                <span class="font-bold text-black">Portfolio Terminal Boot</span>
+                <span class="flex gap-1">
+                    <span class="w-3 h-3 bg-red-500 border border-black rounded-full"></span>
+                    <span class="w-3 h-3 bg-yellow-300 border border-black rounded-full"></span>
+                    <span class="w-3 h-3 bg-green-500 border border-black rounded-full"></span>
+                </span>
+            </div>
+            <pre id="boot-text" class="whitespace-pre-line text-green-400"></pre>
+        </div>
+    </div>
+
     <!-- NAVIGATION AREA -->
     <header class="bg-gradient-to-r from-[#FCBE42] to-[#FF29C6] border-b-4 border-black px-6 py-4">
         <nav x-data="{ open: false }" class="font-mono text-black px-4 py-2  flex justify-around items-center gap-10">
@@ -45,9 +61,9 @@
             <div class="mt-4 md:mt-0 ">
                 <a href="#contact">
                     <button
-                    class="inline-block bg-[#FF29C6] text-black border border-black px-4 py-1 text-sm font-mono shadow-[2px_2px_0px_#000] hover:bg-black hover:text-white active:shadow-inner active:translate-y-[1px] transition-all">
-                    → Contact Me
-                </button>
+                        class="inline-block bg-[#FF29C6] text-black border border-black px-4 py-1 text-sm font-mono shadow-[2px_2px_0px_#000] hover:bg-black hover:text-white active:shadow-inner active:translate-y-[1px] transition-all">
+                        → Contact Me
+                    </button>
                 </a>
             </div>
         </nav>
@@ -97,7 +113,8 @@
                         <a href="#contact"><button
                                 class="bg-[#FF29C6] text-black border border-black px-6 py-2 text-sm font-mono shadow-[2px_2px_0px_#000] hover:bg-black hover:text-white active:shadow-inner active:translate-y-[1px] transition-all">
                                 > Hire Me < </button></a>
-                        <a href="/assets/Kweku Amoah Agyeman-Gyebi CV.pdf" download target="_blank" rel="noopener noreferrer">
+                        <a href="/assets/Kweku Amoah Agyeman-Gyebi CV .pdf" download target="_blank"
+                            rel="noopener noreferrer">
                             <button
                                 class="bg-[#295BFF] text-black border border-black px-6 py-2 text-sm font-mono shadow-[2px_2px_0px_#000] hover:bg-black hover:text-white active:shadow-inner active:translate-y-[1px] transition-all">
                                 ↓ Download CV
@@ -130,7 +147,7 @@
             </div>
 
             <!-- Info Block -->
-            <div
+            <div id="about"
                 class="flex-1 max-w-xl border-4 border-black shadow-[6px_6px_0_0_#000] text-black text-lg leading-relaxed bg-[#FCBE42]">
                 <div class="flex justify-between items-center  border-b-4 border-black px-4 py-2  ">
                     <span class="font-bold text-xl">About Me</span>
@@ -140,9 +157,7 @@
                         <span class="w-3 h-3 bg-green-500 border border-black rounded-full"></span>
                     </span>
                 </div>
-                <p class="ml-2">I'm a <span class="font-bold">Web Developer</span> with a love for building
-                    retro-futuristic, fast,
-                    and accessible websites. I mix clean code with a manga-inspired design approach.
+                <p class="ml-2">I'm a <span class="font-bold">Web Developer</span> specializing in both <span class="font-bold">front-end</span> and <span class="font-bold">back-end</span> systems to create fast, secure, and accessible digital experiences. I build <span class="font-bold">scalable server-side applications, design robust APIs</span>, and implement responsive interfaces using clean, maintainable code. My focus is on <span class="font-bold">performance, user-centered design</span>, and seamless integration across the full development stack.
                 </p>
 
                 <!-- Stats -->
@@ -162,10 +177,10 @@
                 </div>
 
                 <!-- Button -->
-                <a href="./assets/Kweku Amoah Agyeman-Gyebi CV.pdf"><button
-                    class=" flex mt-6  border-2 border-black px-6 py-2 shadow-[4px_4px_0_0_#000] hover:bg-black hover:text-white mb-3 ml-5 transition duration-300 bg-[#295BFF]">
-                    My Experience
-                </button></a>
+                <a href="./assets/Kweku Amoah Agyeman-Gyebi CV .pdf"><button
+                        class=" flex mt-6  border-2 border-black px-6 py-2 shadow-[4px_4px_0_0_#000] hover:bg-black hover:text-white mb-3 ml-5 transition duration-300 bg-[#295BFF]">
+                        My Experience
+                    </button></a>
             </div>
         </div>
     </section>
@@ -205,7 +220,6 @@
                         collaboration.</p>
                 </div>
 
-                <!-- Repeat for other skill cards... -->
                 <!-- App Design -->
                 <div
                     class="border-2 border-black p-6 shadow-[4px_4px_0_#000] bg-white transition-all duration-300 transform hover:scale-125 hover:rotate-6">
@@ -278,14 +292,65 @@
     </section>
 
 
-    <section id="projects" class="bg-[url('./assets/ps.jpg')] bg-cover py-16 px-4 md:px-12 border-t-4 border-black">
+    <section id="projects" x-data="{ tab: 'frontend' }"
+        class="bg-[url('./assets/ps.jpg')] bg-cover py-16 px-4 md:px-12 border-t-4 border-black">
+        ">
         <div class="max-w-6xl mx-auto text-center ">
             <h2
                 class="text-4xl md:text-5xl font-bold mb-8 font-mono tracking-wider border-4 border-black p-2 inline-block bg-[#FDC700] shadow-[4px_4px_0_#000] bg-[#FDC700] justify-end">
                 My Projects
             </h2>
 
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
+            <div class="">
+                <div class="flex justify-center gap-4 mt-4">
+                <button @click="tab = 'frontend'"
+                    :class="tab === 'frontend' ? 'bg-[#295bff] text-black' : 'bg-black text-yellow-400'"
+                    class="border-2 border-black px-4 py-1 font-mono shadow-[3px_3px_0_#000] transition-all hover:scale-105">
+                    Frontend Projects
+                </button>
+
+                <button @click="tab = 'api'"
+                    :class="tab === 'api' ? 'bg-[#295bff]' : 'bg-black text-yellow-400'"
+                    class="border-2 border-black px-4 py-1 font-mono shadow-[3px_3px_0_#000] transition-all hover:scale-105">
+                    Backend Projects
+                </button>
+            </div>
+            </div>
+
+
+            <div x-show="tab === 'frontend'" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
+
+                <!-- Project Card -->
+                 <div
+                    class="relative bg-white border-4 border-black rounded-lg shadow-[4px_4px_0_#000] hover:scale-105 transition-transform duration-300">
+                    <!-- Window Top Bar -->
+                    <div class="flex items-center justify-start gap-2 bg-gray-200 border-b-4 border-black px-3 py-1">
+                        <div class="w-3 h-3 bg-red-500 rounded-full border border-black"></div>
+                        <div class="w-3 h-3 bg-yellow-400 rounded-full border border-black"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full border border-black"></div>
+                    </div>
+
+                    <!-- Image Section -->
+                    <div
+                        class="w-full h-40 bg-gray-100 border-b-4 border-black flex items-center justify-center overflow-hidden">
+                        <!-- Replace this placeholder with your image -->
+                        <img src="./assets/pv.png" alt="Speech Bubble Blog Screenshot"
+                            class="object-cover h-full w-full">
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="p-4">
+                        <h3 class="text-2xl font-bold font-mono mb-2">My Retro Portfolio</h3>
+                        <p class="text-sm font-semibold">A portfolio styled with comic panels and typewriter style
+                            fonts.</p>
+                    </div>
+
+                    <!-- Sticker -->
+                    <span
+                        class="absolute -bottom-4 -right-4 bg-blue-400 text-white font-bold px-3 py-1 border-2 border-black rotate-3">
+                        BANG!
+                    </span>
+                </div>
 
                 <!-- Project Card -->
                 <div
@@ -300,7 +365,6 @@
                     <!-- Image Section -->
                     <div
                         class="w-full h-40 bg-gray-100 border-b-4 border-black flex items-center justify-center overflow-hidden">
-                        <!-- Replace this placeholder with your image -->
                         <a href="https://dog-site-kappa.vercel.app/">
                             <img src="./assets/dw.png" alt="Manga Viewer Screenshot" class="object-cover h-full w-full">
                         </a>
@@ -309,13 +373,13 @@
                     <!-- Content Section -->
                     <div class="p-4">
                         <h3 class="text-2xl font-bold font-mono mb-2">DoggyWalker</h3>
-                        <p class="text-sm font-semibold">A web site for people who would want a dog walking service</p>
+                        <p class="text-sm font-semibold">A non-responsive web design for a dog walking service</p>
                     </div>
 
                     <!-- Sticker -->
                     <span
                         class="absolute -top-4 -right-4 bg-yellow-300 text-black font-bold px-3 py-1 border-2 border-black rotate-9">
-                        NEW!
+                        FIRST!
                     </span>
                 </div>
 
@@ -352,38 +416,88 @@
 
                 <!-- Project Card#3 -->
                 <!-- Project Card -->
-                <div
-                    class="relative bg-white border-4 border-black rounded-lg shadow-[4px_4px_0_#000] hover:scale-105 transition-transform duration-300">
-                    <!-- Window Top Bar -->
-                    <div class="flex items-center justify-start gap-2 bg-gray-200 border-b-4 border-black px-3 py-1">
-                        <div class="w-3 h-3 bg-red-500 rounded-full border border-black"></div>
-                        <div class="w-3 h-3 bg-yellow-400 rounded-full border border-black"></div>
-                        <div class="w-3 h-3 bg-green-500 rounded-full border border-black"></div>
-                    </div>
+                
+            </div>
+        </div>
 
-                    <!-- Image Section -->
-                    <div
-                        class="w-full h-40 bg-gray-100 border-b-4 border-black flex items-center justify-center overflow-hidden">
-                        <!-- Replace this placeholder with your image -->
-                        <img src="./assets/pv.png" alt="Speech Bubble Blog Screenshot"
-                            class="object-cover h-full w-full">
-                    </div>
-
-                    <!-- Content Section -->
-                    <div class="p-4">
-                        <h3 class="text-2xl font-bold font-mono mb-2">My Retro Portfolio</h3>
-                        <p class="text-sm font-semibold">A portfolio styled with comic panels and typewriter style
-                            fonts.</p>
-                    </div>
-
-                    <!-- Sticker -->
-                    <span
-                        class="absolute -bottom-4 -right-4 bg-blue-400 text-white font-bold px-3 py-1 border-2 border-black rotate-3">
-                        BANG!
-                    </span>
+        <!-- API Projects -->
+        <div x-show="tab === 'api'" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
+            <!-- Library Managemnt API -->
+            <div
+                class="relative bg-white border-4 border-black rounded-lg shadow-[4px_4px_0_#000] hover:scale-105 transition-transform duration-300">
+                <div class="flex items-center justify-start gap-2 bg-gray-200 border-b-4 border-black px-3 py-1">
+                    <div class="w-3 h-3 bg-red-500 rounded-full border border-black"></div>
+                    <div class="w-3 h-3 bg-yellow-400 rounded-full border border-black"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full border border-black"></div>
                 </div>
+                <div
+                    class="w-full h-40 bg-gray-100 border-b-4 border-black flex items-center justify-center overflow-hidden">
+                    <a href="https://github.com/kaagyebi/weather_api.git">
+                        <img src="./assets/21004063.jpg" alt="API Project" class="object-cover h-full w-full">
+                    </a>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-2xl font-bold font-mono mb-2">Library Management API</h3>
+                    <p class="text-sm font-semibold">An Express & MongoDB backend that serves <span class="font-bold">BOOKS</span> data via RESTful
+                        endpoints.</p>
+                </div>
+                <span
+                        class="absolute -top-4 -left-4 bg-red-500 text-white font-bold px-2 py-1 border-2 border-black rotate-[-6deg]">
+                        WOW!
+                    </span>
 
+            </div>
 
+            <!-- Ad API -->
+             <div
+                class="relative bg-white border-4 border-black rounded-lg shadow-[4px_4px_0_#000] hover:scale-105 transition-transform duration-300">
+                <div class="flex items-center justify-start gap-2 bg-gray-200 border-b-4 border-black px-3 py-1">
+                    <div class="w-3 h-3 bg-red-500 rounded-full border border-black"></div>
+                    <div class="w-3 h-3 bg-yellow-400 rounded-full border border-black"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full border border-black"></div>
+                </div>
+                <div
+                    class="w-full h-40 bg-gray-100 border-b-4 border-black flex items-center justify-center overflow-hidden">
+                    <a href="https://github.com/EchoStackC5/echo_farms-api.git">
+                        <img src="./assets/21004063.jpg" alt="API Project" class="object-cover h-full w-full">
+                    </a>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-2xl font-bold font-mono mb-2">Advert Management API</h3>
+                    <p class="text-sm font-semibold">An Express & MongoDB backend that serves <span class="font-bold">Advert</span> data via RESTful
+                        endpoints.</p>
+                </div>
+                <span
+                        class="absolute -bottom-4 -right-4 bg-pink-400 text-white font-bold px-3 py-1 border-2 border-black rotate-3">
+                        COOL!
+                    </span>
+            </div>
+            <!-- Event API -->
+             <div
+                class="relative bg-white border-4 border-black rounded-lg shadow-[4px_4px_0_#000] hover:scale-105 transition-transform duration-300">
+                <div class="flex items-center justify-start gap-2 bg-gray-200 border-b-4 border-black px-3 py-1">
+                    <div class="w-3 h-3 bg-red-500 rounded-full border border-black"></div>
+                    <div class="w-3 h-3 bg-yellow-400 rounded-full border border-black"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full border border-black"></div>
+                </div>
+                <div
+                    class="w-full h-40 bg-gray-100 border-b-4 border-black flex items-center justify-center overflow-hidden">
+                    <a href="https://github.com/kaagyebi/event_api.git">
+                        <img src="./assets/21004063.jpg" alt="API Project" class="object-cover h-full w-full">
+                    </a>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-2xl font-bold font-mono mb-2">Event API</h3>
+                    <p class="text-sm font-semibold">An Express & MongoDB backend that serves <span class="font-bold">EVENTS</span> data via RESTful
+                        endpoints.</p>
+                </div>
+                <!-- <div>
+                    <a href="https://github.com/kaagyebi/event_api.git">Github </a>
+                </div> -->
+                <span
+                        class="absolute -top-4 -right-4 bg-blue-400 text-white font-bold px-3 py-1 border-2 border-black rotate-3">
+                        POW!
+                    </span>
             </div>
         </div>
     </section>
@@ -511,7 +625,7 @@
                     <!-- Content -->
                     <ul class="text-left text-sm px-3 py-2 space-y-1">
                         <li><a href="#" class="hover:underline text-blue-800">→ Home</a></li>
-                        <li><a href="#about" class="hover:underline text-blue-800">→ About Me</a></li>
+                        <li><a href="#about" class="hover:underline text-blue-800">→ About-Me</a></li>
                         <li><a href="#Skill-Set" class="hover:underline text-blue-800">→ Skills</a></li>
                         <li><a href="#projects" class="hover:underline text-blue-800">→ Projects</a></li>
                         <li><a href="#contact" class="hover:underline text-blue-800">→ Contact</a></li>
