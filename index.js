@@ -1,4 +1,4 @@
-const text = "Web Developer";
+const text = "A Web Developer";
 let index = 0;
 let isDeleting = false;
 
